@@ -1,3 +1,11 @@
 modules:
-  http:
+  http_get:
     prober: http
+    timeout: 5s
+    http:
+      method: GET
+      valid_status_codes: [200, 301, 302]
+      no_follow_redirects: true
+      preferred_ip_protocol: "ip4"
+      tls_config:
+        insecure_skip_verify: false
